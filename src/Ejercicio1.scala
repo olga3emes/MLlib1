@@ -31,14 +31,14 @@ import org.apache.spark.mllib.util.MLUtils
 //DECISION TREE CLASSIFICATION
 //maxBins=86  entropy error -> 14.873723089209065 gini error -> 14.91412372853093
 //maxBins=100 entropy error -> 15.313031586671558 gini error -> 15.004666044527395
-//maxBins=110 entropy error ->  gini error ->
-//maxBins=120 entropy error ->  gini error ->
+//maxBins=110 entropy error -> 15.023770737059078 gini error -> 15.068309670506293
+//maxBins=120 entropy error -> 15.339086730813742 gini error -> 15.225469518931407
 
 //RANDOM FOREST CLASSIFICATION
-//maxBins=86  entropy error -> 14900342727847468 gini error -> 14817408704352175
-//maxBins=100 entropy error -> 15059537707214568 gini error -> 1494800693240901
-//maxBins=110 entropy error ->  gini error ->
-//maxBins=120 entropy error ->  gini error ->
+//maxBins=86  entropy error -> 14.900342727847468 gini error -> 14.817408704352175
+//maxBins=100 entropy error -> 15.059537707214568 gini error -> 14.94800693240901
+//maxBins=110 entropy error -> 15.116858938129592 gini error -> 14.817171175997856
+//maxBins=120 entropy error -> 14.919745052891514 gini error -> 15.108299019115531
 
 
 
@@ -59,7 +59,7 @@ object Ejercicio1 {
 
     val numClasses = 2 //0 o 1 -> cliente es binario
     val maxDepth = 3 //profundidad del árbol
-    val maxBins = 86 //number of bins used when discretizing continuous features (32 por defecto, necesitamos como mínimo 86)
+    val maxBins = 120 //number of bins used when discretizing continuous features (32 por defecto, necesitamos como mínimo 86)
     val impurity = "entropy" //2 opciones: “gini” or “entropy”.
 
     val categoricalFeaturesInfo = Map(0 -> 86, 1 -> 2) // 0 - tipo de producto(86 posibilidades) y  1- tipo de mercado (2 posibilidades)
