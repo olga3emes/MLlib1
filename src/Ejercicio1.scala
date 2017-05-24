@@ -47,7 +47,7 @@ object Ejercicio1 {
   def main(args:	Array[String]):	Unit	= {
     Logger.getLogger("org").setLevel(Level.WARN);
     Logger.getLogger("akka").setLevel(Level.WARN);
-    System.setProperty("hadoop.home.dir", "C:\\Winutil\\")
+    //System.setProperty("hadoop.home.dir", "C:\\Winutil\\")
 
     val conf = new SparkConf().setAppName("Ejercicio1").setMaster("local")
     val sc = new SparkContext(conf)

@@ -30,8 +30,6 @@ Final Centers:
 posteriori si en cada cluster se agrupan los productos contratados del mismo tipo.*/
 
 
-
-
 //https://spark.apache.org/docs/2.1.0/mllib-clustering.html
 
 
@@ -40,7 +38,7 @@ object Ejercicio2 {
   def main(args: Array[String]): Unit = {
     Logger.getLogger("org").setLevel(Level.WARN);
     Logger.getLogger("akka").setLevel(Level.WARN);
-    System.setProperty("hadoop.home.dir", "C:\\Winutil\\")
+    //System.setProperty("hadoop.home.dir", "C:\\Winutil\\")
 
     val conf = new SparkConf().setAppName("Ejercicio2").setMaster("local")
     val sc = new SparkContext(conf)
