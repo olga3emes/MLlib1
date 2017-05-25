@@ -59,18 +59,17 @@ object Ejercicio1 {
 
     val numClasses = 2 //0 o 1 -> cliente es binario
     val maxDepth = 3 //profundidad del árbol
-    val maxBins = 120 //number of bins used when discretizing continuous features (32 por defecto, necesitamos como mínimo 86)
+    val maxBins = 120 //number of bins used when discretizing continuous features
+    // (32 por defecto, necesitamos como mínimo 86 porque tiene 86 valores discretos)
     val impurity = "entropy" //2 opciones: “gini” or “entropy”.
 
     val categoricalFeaturesInfo = Map(0 -> 86, 1 -> 2) // 0 - tipo de producto(86 posibilidades) y  1- tipo de mercado (2 posibilidades)
-
+    //Si todas fuesen variables continuas Map[Int,Int]()
 
     //Decision Tree Classification -------------------------------------------------------------------------------------
 
     println("Decision Tree Classification:\n")
-    val model = DecisionTree.trainClassifier(trainingData, numClasses,
-      categoricalFeaturesInfo,
-      impurity, maxDepth, maxBins)
+    val model = DecisionTree.trainClassifier(trainingData, numClasses, categoricalFeaturesInfo, impurity, maxDepth, maxBins)
 
     val labelAndPreds = testData.map { point =>
       val prediction = model.predict(point.features)

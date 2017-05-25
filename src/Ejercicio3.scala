@@ -52,11 +52,11 @@ object Ejercicio3 {
     /**Transformamos los datos para ajustar el modelo en las caracteristicas hardware***/
 
 
-    //Discretizarlos
-
+    //Si hubiese querido discretizarlos
+    /*
     val discretizedData = data.map { lp =>
       LabeledPoint(lp.label, Vectors.dense(lp.features.toArray))
-    }
+    }*/
     //discretizedData.saveAsTextFile("reformat")
 
     //Escalar datos
@@ -103,7 +103,7 @@ object Ejercicio3 {
     val maxBins = 100
     val impurity = "entropy" //2 opciones: “gini” or “entropy”.
 
-    val categoricalFeaturesInfo = Map(0 -> 10)
+    val categoricalFeaturesInfo = Map[Int,Int]()
     val	impurityR= "variance"
 
       val modelR = DecisionTree.trainRegressor(trainingData, categoricalFeaturesInfo, impurityR, maxDepth, maxBins)
